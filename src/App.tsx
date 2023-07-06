@@ -9,13 +9,13 @@ const OneMatch = lazy(() => import('./components/OneMatch'))
 const TooManyMatches = lazy(() => import('./components/TooManyMatches'))
 
 function App() {
-  const { response, countries, findCountry } = useCountry()
+  const { response, countries, findCountry, getCountry } = useCountry()
   const { error, isLoading } = response
   const { length } = countries
 
   if (error) return 'An error has occurred.'
   if (isLoading) return 'Loading...'
-
+  
   return (
     <Layout>
       <section className={sectionStyle}>
@@ -29,7 +29,7 @@ function App() {
                 : length === 1 
                   ? <OneMatch country={countries[0]}/>
                   : length > 1 && length <= 10 
-                    ? <ManyMatches />
+                    ? <ManyMatches countries={countries} getCountry={getCountry}/>
                     : <TooManyMatches />
             }
           </Suspense>
