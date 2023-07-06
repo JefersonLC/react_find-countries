@@ -2,9 +2,9 @@ import { useState } from 'react'
 import useSWR from 'swr'
 import { Countries } from './api.d'
 
-const API_URL = 'https://restcountries.com/v3.1/all'
+const API_COUNTRIES_URL = 'https://restcountries.com/v3.1/all?fields=name,flag,population,languages'
 
-async function getCountries(url: string) {
+export async function getData(url: string) {
   const res = await fetch(url)
   return await res.json()
 }
@@ -12,7 +12,7 @@ async function getCountries(url: string) {
 export function useCountry() {
   const [countries, setCountries] = useState<Countries>([])
 
-  const response = useSWR<Countries>(API_URL, getCountries)
+  const response = useSWR<Countries>(API_COUNTRIES_URL, getData)
 
   function findCountry({ currentTarget }: React.FormEvent<HTMLInputElement>) {
     const countryName = currentTarget.value.toLowerCase().trim()
@@ -29,5 +29,18 @@ export function useCountry() {
     setCountries(filteredCountries)
   }
 
-  return { response, findCountry, countries }
+  function getCountry(name: string) {
+    const filteredCountry = countries.find(
+      ({ name: { common } }) => common === name
+    )
+
+    if (!filteredCountry) {
+      setCountries([])
+      return
+    }
+
+    setCountries([filteredCountry])
+  }
+
+  return { response, findCountry, countries, getCountry }
 }
