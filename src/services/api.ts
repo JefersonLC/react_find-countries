@@ -2,7 +2,8 @@ import { useState } from 'react'
 import useSWR from 'swr'
 import { Countries } from './api.d'
 
-const API_COUNTRIES_URL = 'https://restcountries.com/v3.1/all?fields=name,flag,population,languages'
+const API_COUNTRIES_URL =
+  'https://restcountries.com/v3.1/all?fields=name,flags,population,languages,capital'
 
 export async function getData(url: string) {
   const res = await fetch(url)
