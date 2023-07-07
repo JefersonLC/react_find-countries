@@ -2,7 +2,7 @@
 
 This is one of my first projects that I did when I was learning React. This version is made with TypeScript and has a better UI **_(maybe not the best)_**.
 
-Maybe the code is confusing **_(I think most of my projects are)_**, it was a project I wanted to finish as soon as possible to see how far I've progressed and learned all this time.
+Maybe the code is confusing **_(like almost all my projects)_**, it was a project I wanted to finish as soon as possible to see how far I've progressed and learned all this time.
 
 ## How to Install and Run
 
