@@ -15,7 +15,7 @@ export const sectionStyle = css({
   },
 })
 
-export const divStyle = css({
+export const div1Style = css({
   color: 'white',
   p: '10',
   border: '1px',
@@ -38,4 +38,10 @@ export const inputStyle = css({
   px: '4',
   py: '3',
   rounded: 'md',
+})
+
+export const div2Style = css({
+  mt: '8',
+  textAlign: 'center',
+  fontSize: '1.65rem',
 })
