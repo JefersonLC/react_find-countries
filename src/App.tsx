@@ -13,8 +13,8 @@ function App() {
   const { error, isLoading } = response
   const { length } = countries
 
-  if (error) return 'An error has occurred.'
-  if (isLoading) return 'Loading...'
+  if (error) return <p>An error has occurred.'</p>
+  if (isLoading) return <p>Loading...'</p>
   
   return (
     <Layout>
