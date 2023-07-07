@@ -1,10 +1,18 @@
 export type Countries = Country[]
 
 export interface Country {
+  flags: Flags
   name: Name
+  capital: string[]
+
   languages: { [key: string]: string }
-  flag: string
   population: number
+}
+
+interface Flags {
+  png: string
+  svg: string
+  alt: string
 }
 
 interface Name {
