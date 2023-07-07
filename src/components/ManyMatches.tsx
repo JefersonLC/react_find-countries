@@ -1,3 +1,4 @@
+import { buttonStyle, liStyle, ulStyle } from '../css/ManyMatches'
 import { Countries } from '../services/api.d'
 
 interface ManyMatchesProps {
@@ -10,13 +11,18 @@ export default function ManyMatches({
   getCountry,
 }: ManyMatchesProps) {
   return (
-    <div>
+    <ul className={ulStyle}>
       {countries.map(({ name }) => (
-        <div key={name.official}>
+        <li key={name.official} className={liStyle}>
           {name.common}{' '}
-          <button onClick={() => getCountry(name.common)}>show</button>
-        </div>
+          <button
+            onClick={() => getCountry(name.common)}
+            className={buttonStyle}
+          >
+            Show
+          </button>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
