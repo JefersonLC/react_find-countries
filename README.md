@@ -13,7 +13,7 @@ To run the application, follow these steps:
 3. Install `pnpm` using the `npm install -g pnpm` command
 4. Run the `pnpm install` command to install all the necessary dependencies.
 5. Run the `pnpm run dev` command to start the application in development mode.
-6. Open your browser and navigate to `http://localhost:5173` to use the calculator.
+6. Open your browser and navigate to `http://localhost:5173`.
 
 ## Technologies Used
 
@@ -25,4 +25,4 @@ To run the application, follow these steps:
 
 ## Contributions
 
-I appreciate contributions and suggestions to improve my portfolio website! If you have any ideas or encounter any issues, feel free to open an issue or submit a pull request.
+I appreciate contributions and suggestions to improve my app! If you have any ideas or encounter any issues, feel free to open an issue or submit a pull request.
